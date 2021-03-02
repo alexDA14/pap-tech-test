@@ -1,0 +1,43 @@
+@import './variables';
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: $global-font;
+  font-size: $global-font-size;
+  color: $text-color;
+  min-height: 100vh;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-family: $global-font;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: $dark-text;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@import './helpers';
+@import './media';

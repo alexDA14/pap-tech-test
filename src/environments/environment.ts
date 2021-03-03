@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://api.slstice.com/mock/',
+  apiUrl: 'https://api.slstice.com/mock',
   apiKey: 'ZSTYF0GBSSF0l3Ou6DTPE'
 };
 

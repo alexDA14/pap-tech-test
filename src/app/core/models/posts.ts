@@ -1,8 +1,10 @@
+import { User } from './users';
+
 export interface PostsResponse {
   success: boolean;
   response: {
-    count: number,
-    posts: Post[]
+    count: number;
+    posts: Post[];
   };
 }
 
@@ -14,6 +16,8 @@ export interface Post {
   likes: number;
   title: string;
   description: string;
+  media?: PostMedia;
+  userData?: User;
 }
 
 export interface PostMediaResponse {

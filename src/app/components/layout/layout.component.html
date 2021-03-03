@@ -1,0 +1,31 @@
+<div class="posts-container" *ngIf="postView">
+  <div class="post-image-holder d-flex f-d-column f-center">
+    <div class="back-blur-bg" [style.backgroundImage]="'url(' + postView.media.urls.small + ')'"></div>
+    <img src="{{postView.media.urls.small}}" alt="{{postView.title}}">
+  </div>
+  <div class="post-data-holder d-flex f-d-column f-between">
+    <div class="user-data d-flex a-center f-end">
+      <div class="user-name"><strong>{{postView.userData.first_name}} {{postView.userData.last_name}}</strong></div>
+      <div class="user-image">
+        <img src="{{postView.userData.profile_images.medium}}" alt="{{postView.userData.first_name}}">
+      </div>
+    </div>
+    <div class="post-data">
+      <h2>{{postView.title}}</h2>
+      <p>{{postView.description}}</p>
+    </div>
+    <div class="post-sub-data">
+      <div class="post-likes d-flex a-center">
+        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI1MTlweCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNTE5IDUxOSIgd2lkdGg9IjUxOXB4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48dGl0bGUvPjxkZXNjLz48ZGVmcz48cmFkaWFsR3JhZGllbnQgY3g9IjUwJSIgY3k9IjE1LjQwNDg2ODglIiBmeD0iNTAlIiBmeT0iMTUuNDA0ODY4OCUiIGlkPSJyYWRpYWxHcmFkaWVudC0xIiByPSI5Mi4xOTYxMzI2JSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzRFQTNGOCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwNzNFNCIvPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiPjxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcxOC4wMDAwMDAsIC04MjEuMDAwMDAwKSI+PGcgaWQ9Ikdyb3VwLTgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDcxOC4wMDAwMDAsIDgyMS4wMDAwMDApIj48Y2lyY2xlIGN4PSIyNTkuNSIgY3k9IjI1OS41IiBmaWxsPSJ1cmwoI3JhZGlhbEdyYWRpZW50LTEpIiBpZD0iT3ZhbCIgcj0iMjU5LjUiLz48cGF0aCBkPSJNMjUzLjA4NjUyOSwxMDYuODA2MDggQzI1MS43NjM1NTcsMTA3LjQ0MDMxNyAyNTAuOTM1NTMzLDEwOC43OTE0OCAyNTAuOTcxMDEyLDExMC4yNTgxOTUgQzI1MS40ODU3NTQsMTMxLjU0ODk1NSAyNTEuNzQzMTI1LDE0My44ODk5MjUgMjUxLjc0MzEyNSwxNDcuMjgxMTA0IEwyNTEuNzQzMTI1LDE1Ni44NzMzNjUgTDI1MC4xMzgyMDgsMTYwLjIzMDY1NyBDMjQ4LjMzNTcwMiwxNjQuMDAwODk1IDI0Ny40MDQ5MDgsMTY1LjU2NDkxMyAyMzQuMjAyODM3LDE4Ny4wMTMyMDkgQzIyOS4wMzI2MiwxOTUuNDEyNjcyIDIyMi4xOTkzNywyMDYuOTIzMzg1IDIxOS4wMTc2MjMsMjEyLjU5Mjg5MSBDMjE1LjIyNTYxMSwyMTkuMzUwMSAyMTMuMjQwNzMyLDIyNi45NzEyMTUgMjEzLjI1NDgxNiwyMzQuNzE5NzAxIEwyMTMuNDQyOTUsMzM4LjIzMDMyOCBDMjEzLjQ2NjAwNywzNTAuOTE2NTM0IDIyMy43NTY2ODQsMzYxLjE4ODUyNSAyMzYuNDQyOTEyLDM2MS4xODg1MjUgTDM0OS42NDIxMzYsMzYxLjE4ODUyNSBMMzQ5LjY0MjEzNiwzNjEuMTg4NTI1IEwzNTMuNzY4NzIxLDM1OS4xNjM1OTggQzM2My4wMzUwMTQsMzU0LjYxNTQyOCAzNjkuODM4NzIzLDM0NC4wMzMyNDUgMzY5Ljg4ODEyLDMzNC4wOTAzODcgQzM2OS45MDc0OTEsMzMwLjI1NjM2MSAzNjkuNzg0OTY3LDMyOS43NTk0ODEgMzY3LjgzOTExMywzMjUuNzQ3OTk4IEMzNjYuNzAxMDQ2LDMyMy40MDIyMSAzNjUuODI5MzM0LDMyMS40NDczMDggMzY1LjkwMTk3NywzMjEuNDA0MTQyIEMzNjUuOTc0NjE5LDMyMS4zNjA5NzcgMzY4LjExMDc5NywzMjAuNDEwODY0IDM3MC42NDg5MywzMTkuMjkyODg2IEMzODEuNTUzMDcyLDMxNC40ODg2MDIgMzg3Ljk2OTgzNywzMDYuODUzMTYyIDM4OC40MzQyNjYsMjk4LjEyOTAwMSBDMzg4LjY3OTc5OCwyOTMuNTIyNzk3IDM4Ny42MDEyOTcsMjkwLjM0MDA4NSAzODMuOTU4OTk2LDI4NC45MTg1MzkgQzM4Mi40OTA2NDYsMjgyLjczMjk0MiAzODEuMjg5MTM3LDI4MC44MTY0MDkgMzgxLjI4OTEzNywyODAuNjU5MDk1IEMzODEuMjg5MTM3LDI4MC41MDIyNjIgMzgxLjY0NDYwMiwyODAuMzczNzI2IDM4Mi4wNzkwMDUsMjgwLjM3MzcyNiBDMzgyLjUxMzg5MiwyODAuMzczNzI2IDM4NC42Mzg0NDYsMjc5LjQ1NzE4NSAzODYuODAwNzc1LDI3OC4zMzY4MDkgQzM5Ni42NzgyMzUsMjczLjIxOTgxNyA0MDIuMzMzMjIxLDI2My41MDcxNzQgNDAwLjczMDI0LDI1NC40MTIyNzEgQzM5OS42NjIzOTQsMjQ4LjM1Mjg0IDM5Ni40Njk5OTMsMjQzLjUzNTEyNyAzODkuMzc3NjUxLDIzNy4yNzgwOTUgTDM4Ny4wNTQwNTYsMjM1LjIyODIyOSBMMzg5LjcyNDM5OSwyMzIuMzcxNjU0IEMzOTMuMTY4NjI4LDIyOC42ODcyNjYgMzk1LjI1ODc5OCwyMjUuNjU1MTUyIDM5Ni42MzEyNTksMjIyLjM1MjA1NyBDMzk3LjUzMjk5NiwyMjAuMTgwODQ5IDM5Ny43MzM5NzQsMjE4Ljc5MDQ1MSAzOTcuNzQzMTc2LDIxNC42NDc1NTMgQzM5Ny43NjEwOTQsMjA2Ljc0Nzg0NyAzOTUuOTM0ODU5LDIwMS40NTI5MTkgMzkxLjYxMjYyMywxOTYuODc2OTMxIEMzODguNzE3NTcyLDE5My44MTE3MjQgMzg1LjQ4Nzg4MSwxOTEuODE3MDEzIDM4MC45MjMwMTgsMTkwLjI3NDU3NyBMMzc3LjE3MjcyMiwxODkuMDA3NDQgQzMyNS42NzgxNDIsMTg4LjcyMjg2OSAyOTkuOTMxMzM2LDE4OC41MTc1OTUgMjk5LjkzMjMwNSwxODguMzkxNjE3IEMyOTkuOTM0MjQyLDE4OC4yMDI2NDkgMzAwLjM2ODY0NSwxODQuNDg3MDg3IDMwMC44OTc5NjcsMTgwLjEzNDU5OCBDMzAyLjExMDEzLDE3MC4xNjgyMzkgMzAyLjI0MjM0LDE1MS45Nzg0MzUgMzAxLjE1MDI3OSwxNDUuMzYyNjUyIEMyOTguMDQwNjkxLDEyNi41MjM5MzEgMjg4LjAyMTgyLDExMS43NjgxNTYgMjc0LjgzOTEyMSwxMDYuNjEwODc3IEMyNzEuNTM4MjQsMTA1LjMxOTc1OSAyNzAuNDUzNDQ0LDEwNS4xMzg0NjUgMjY1LjMwMzA4MiwxMDUuMDIwMDAxIEMyNjIuMTA2ODA2LDEwNC45NDYxNCAyNTguNTM5NTY5LDEwNS4wODMzMDkgMjU3LjM3NjMxOSwxMDUuMzI1MDM0IEMyNTYuMjEyNTg0LDEwNS41NjYyOCAyNTQuMjgyMjI3LDEwNi4yMzI5NDIgMjUzLjA4NjUyOSwxMDYuODA2MDggWiBNMTQ2LDIxOC4zNzcwNDkgTDE4OS44NTgzMzMsMjE4LjM3NzA0OSBDMTkzLjcyNDMyNywyMTguMzc3MDQ5IDE5Ni44NTgzMzMsMjIxLjUxMTA1NiAxOTYuODU4MzMzLDIyNS4zNzcwNDkgTDE5Ni44NTgzMzMsMzY0IEMxOTYuODU4MzMzLDM2Ny44NjU5OTMgMTkzLjcyNDMyNywzNzEgMTg5Ljg1ODMzMywzNzEgTDE0NiwzNzEgQzE0Mi4xMzQwMDcsMzcxIDEzOSwzNjcuODY1OTkzIDEzOSwzNjQgTDEzOSwyMjUuMzc3MDQ5IEMxMzksMjIxLjUxMTA1NiAxNDIuMTM0MDA3LDIxOC4zNzcwNDkgMTQ2LDIxOC4zNzcwNDkgWiIgZmlsbD0iI0ZGRkZGRiIgaWQ9IlNoYXBlIi8+PC9nPjwvZz48L2c+PC9zdmc+" alt="Like">
+        <strong>{{postView.likes}} persons.</strong>
+      </div>
+      <div class="post-date">Posted at: {{postView.created | date: 'MM/dd/yyyy'}}</div>
+    </div>
+  </div>
+</div>
+<div class="no-posts d-flex a-center f-center" *ngIf="!postView && !(loading | async)">
+  <span>No Posts! Perhaps an error happened =( Please, reload the page and try again later.</span>
+</div>
+<div class="loading-overlay" *ngIf="(loading | async)">
+  <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div>

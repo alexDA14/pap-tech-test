@@ -1,6 +1,3 @@
-## PapTechTest
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
-
 #Feedback & answers
 
 `After having read the API documentation, is there anything that jumps out as a potential issue ?` - Yes. The first thing that might be an issue is that getUser endpoint getting user data by userName instead of userId.
@@ -19,6 +16,9 @@ The next thing is a data structure, I would accept a separate request for gettin
 `How long did it take you to implement this development ? Was it longer or shorter than what you initially expected ?` - If not count the time that I spent searching cool favicon.ico, I spent for this task around 5-6hours. For sure, it's not so fast, but I didn't have design and UI elements like loader, and I had to find\style them. Between there is loader spinner on initial loading))) I don't think that task was longer or shorter than I expected, it was approximately as I thought at the beginning.
 #
 #
+
+## PapTechTest
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
 
 ### Development server
 

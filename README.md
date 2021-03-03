@@ -1,4 +1,4 @@
-#Feedback & answers
+# Feedback & answers
 
 `After having read the API documentation, is there anything that jumps out as a potential issue ?` - Yes. The first thing that might be an issue is that getUser endpoint getting user data by userName instead of userId.
 The next thing is a data structure, I would accept a separate request for getting media files if it returns blob or stream, but it returns JSON with URL strings... Why do not add this data in getPosts request?
